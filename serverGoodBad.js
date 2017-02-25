@@ -16,18 +16,18 @@ function handleRequestBad(request, response) {
   response.end("Keep working!");
 }
 
-// create server
+// create server to serve up Good messages
 var serverGood = http.createServer(handleRequestGood);
 
-
+// create server to serve up depressing messages
 var serverBad = http.createServer(handleRequestBad);
 
-// listen on the port and execute the callback function
+// listen on the GOOD_port and execute the callback function
 serverBad.listen(PORT_BAD, function(){
 	console.log("Get a handle on yourself - you stick!");
 });
 
-// listen on the port and execute the callback function
+// listen on the BAD_port and execute the callback function
 serverGood.listen(PORT_GOOD, function(){
 	console.log("Ah!  You are such a doll!");
 });
